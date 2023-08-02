@@ -2,15 +2,19 @@ defmodule EWS.Mixfile do
   use Mix.Project
 
   def project do
-    [ app: :ews,
+    [
+      app: :http,
       version: "0.0.1",
-      elixir: "~> 0.10.2-dev",
-      deps: deps ]
+      elixir: "~> 1.15",
+      start_permanent: Mix.env() == :prod,
+      deps: deps()
+    ]
   end
 
   # Configuration for the OTP application
   def application do
     [
+      extra_applications: [:logger]
       mod: { EWS, [] },
       applications: [:cowboy],
       lager: [
@@ -23,16 +27,15 @@ defmodule EWS.Mixfile do
     ]
   end
 
-  # Returns the list of dependencies in the format:
-  # { :foobar, "~> 0.1", git: "https://github.com/elixir-lang/foobar.git" }
+  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:cowboy, github: "extend/cowboy"},
-      {:mimetypes, github: "spawngrid/mimetypes"},
-      {:lager, github: "basho/lager"},
-      {:shakkei, github: "glejeune/shakkei"},
-      {:jsonex, github: "marcelog/jsonex"},
-      {:exconfig, github: "yrashk/exconfig"}
+      {:cowboy, github: "Nexeum/SwiftCow"},
+      {:mimetypes, github: "erlangpack/mimetypes"},
+      {:lager, github: "Nexeum/Elogix"},
+      {:shakkei, github: "Nexeum/Utilix"},
+      {:jsonex, github: "Nexeum/JSXlixir"},
+      {:exconfig, github: "Nexeum/XConfig"}
     ]
   end
 end
