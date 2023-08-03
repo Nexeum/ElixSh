@@ -14,7 +14,7 @@ defmodule EWS.Mixfile do
   # Configuration for the OTP application
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
       mod: { EWS, [] },
       applications: [:cowboy],
       lager: [
@@ -30,12 +30,12 @@ defmodule EWS.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:cowboy, github: "Nexeum/SwiftCow"},
+      {:SwiftCow, github: "Nexeum/SwiftCow"},
       {:mimetypes, github: "erlangpack/mimetypes"},
-      {:lager, github: "Nexeum/Elogix"},
-      {:shakkei, github: "Nexeum/Utilix"},
-      {:jsonex, github: "Nexeum/JSXlixir"},
-      {:exconfig, github: "Nexeum/XConfig"}
+      {:Elogix, github: "Nexeum/Elogix"},
+      {:Utilix, github: "Nexeum/Utilix"},
+      {:JSXlixir, github: "Nexeum/JSXlixir"},
+      {:XConfig, github: "Nexeum/XConfig"}
     ]
   end
 end
